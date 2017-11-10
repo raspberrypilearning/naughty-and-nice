@@ -2,12 +2,10 @@
 
 ### Hardware
 
-+ List hardware here, or delete section.
++ An internet connected computer
 
 ### Software
 
-+ List software here, or delete section.
-
-### Additional Resources
-
-+ List additional resources, or delete section.
++ Python 3
++ Tweepy Python library - `pip3 install tweepy`
++ NTLK Python library - `pip3 install ntlk`

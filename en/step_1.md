@@ -1,25 +1,27 @@
 ## Introduction
 
-Add project description here. What will learners be making?
+It's been a hard year for Santa, and he's not had much of an opportunity to make a list and he certainly has no time to check it twice! To help Santa out, you're going to make a sentiment analysis bot, that can look over a Twitter user's last 200 tweets and make a decision about whether they are naughty or nice.
+
+This is a fairly advanced project and is best suited to learners who are reasonable experience in a programming language,
 
 ### What you will make
 
-Add something here to showcase here, for example:
-
-<div class="scratch-preview">
-  <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/160619869/?autostart=false" frameborder="0"></iframe>
-</div>
-
-Add instructions here. These should explain either how the finished project will work, or explain how to interact with the content above.
+Here's a little example video, showing the output of the program.
+<video width="560" height="315" controls>
+<source src="images/vid_1.webm" type="video/webm">
+Your browser does not support WebM video, try FireFox or Chrome
+</video>
 
 ### What you will learn
 
 This project covers elements from the following strands of the [Raspberry Pi Digital Making Curriculum](http://rpf.io/curriculum):
 
-+ [Add curriculum strand/level description.](https://www.raspberrypi.org/curriculum/strand/level)
++ [Apply higher-order programming techniques to solve real-world problems
+
+](https://curriculum.raspberrypi.org/programming/maker/)
 
 ### Additional information for educators
 
-If you need to print this project, please use the [printer-friendly version](https://projects.raspberrypi.org/en/projects/project-name/print){:target="_blank"}.
+If you need to print this project, please use the [printer-friendly version](https://projects.raspberrypi.org/en/projects/naughty-and-nice/print){:target="_blank"}.
 
 Use the link in the footer to access the GitHub repository for this project, which contains all resources (including an example finished project) in the 'en/resources' folder.
