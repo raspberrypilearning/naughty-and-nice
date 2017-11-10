@@ -1,6 +1,8 @@
 ##IMPORTS
 import tweepy
 import json
+import re
+import string
 
 ##SET UP TWITTER
 with open('/home/mjs/twitter_auth.json') as f:
@@ -35,6 +37,7 @@ neg_emojis = '☹😕😩😒😠😐😦😣😫😖😞💔😢😟'
 all_emojis = list(pos_emojis + neg_emojis)
 
 ##FETCH SOME TWEETS
+
 myStream.filter(track=all_emojis, languages=['en'])
 
 def store_tweets(file, tweets):
@@ -50,15 +53,13 @@ def store_tweets(file, tweets):
 
     return all_tweets
 
+def clean_tweets(tweets):
+    tweets = [tweet.rstrip() for tweet in tweets]
+    tweets = [re.sub(r'@\S+', '', tweet) for tweet in tweets]
+    tweets = [re.sub(r'http\S+', '', tweet) for tweet in tweets]
+    tweets = [tweet.translate({ord(char): '' for char in string.punctuation}) for tweet in tweets]
+    return tweets
+
 ##EXECUTE THE PROGRAM
 tweets = store_tweets('tweets.txt', tweets)
-    
-
-
-
-
-
-
-
-
-
+tweets = clean_tweets(tweets)
