@@ -111,5 +111,4 @@ tweets = [tweet.rstrip() for tweet in tweets]
 <source src="images/vid_7.webm" type="video/webm">
 Your browser does not support WebM video, try FireFox or Chrome
 </video>
-
 --- /hint --- --- /hints ---

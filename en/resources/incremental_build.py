@@ -60,6 +60,17 @@ def clean_tweets(tweets):
     tweets = [tweet.translate({ord(char): '' for char in string.punctuation}) for tweet in tweets]
     return tweets
 
+def sort_tweets(tweets):
+    positive_tweets = [tweet for tweet in tweets if set(tweet) & set(pos_emojis)]
+    negative_tweets = [tweet for tweet in tweets if set(tweet) & set(neg_emojis)]
+    positive_tweets = [re.sub(r'[^\x00-\x7F]+', '', tweet) for tweet in positive_tweets]
+    negative_tweets = [re.sub(r'[^\x00-\x7F]+', '', tweet) for tweet in negative_tweets]
+    return positive_tweets, negative_tweets
+    
+    
 ##EXECUTE THE PROGRAM
 tweets = store_tweets('tweets.txt', tweets)
 tweets = clean_tweets(tweets)
+pos_tweets, neg_tweets = sort_tweets(tweets)
+
+
