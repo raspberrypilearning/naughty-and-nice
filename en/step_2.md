@@ -9,3 +9,4 @@
 + Python 3
 + Tweepy Python library - `pip3 install tweepy`
 + NLTK Python library - `pip3 install nltk`
++ A text editor or IDE other than IDLE (which doesn't support emoji characters)
