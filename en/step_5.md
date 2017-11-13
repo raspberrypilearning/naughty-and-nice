@@ -44,13 +44,13 @@ Your browser does not support WebM video, try FireFox or Chrome
 all_tweets = old_tweets + tweets
 ```
 
-If you run the program fairly often, there will probably be duplicate tweets. These need to be removed. `sets` are a great way of removing duplicate items from a list. Have a look at the collapsable section below, to see how to achieve this.
+If you run the program fairly often, there will probably be duplicate tweets. These need to be removed. `sets` are a great way of removing duplicate items from a list. Have a look at the collapsible section below, to see how to achieve this.
 
 --- collapse ---
 ---
 title: Removing duplicates items from a list
 ---
-In Python a set is an unordered collection of unique items. But is't very definition it can't have duplicates within it. Here is an example of a Python set.
+In Python a set is an unordered collection of unique items. But isn't very definition it can't have duplicates within it. Here is an example of a Python set.
 
 ```python
 >>> my_set = {1,2,3,4}
@@ -94,7 +94,7 @@ There's one small problem with the current list of `all_tweets`. Some people lik
 all_tweets = [tweet.replace('\n','')+"\n" for tweet in all_tweets]
 ```
 
-Lastly you need to write all the tweets back into the file. Have a look at the collapsable section below to see how to write a list to a file.
+Lastly you need to write all the tweets back into the file. Have a look at the collapsible section below to see how to write a list to a file.
 
 --- collapse ---
 ---

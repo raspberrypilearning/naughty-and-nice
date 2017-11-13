@@ -1,6 +1,6 @@
 ## Calculating naughtiness
 
-Now that you can tell if a tweet is positive or negative, you can fetch a user's last two hundered tweets and see if they mostly talk about negative or positive things. This will help you know if they're naughty or nice.
+Now that you can tell if a tweet is positive or negative, you can fetch a user's last two hundred tweets and see if they mostly talk about negative or positive things. This will help you know if they're naughty or nice.
 
 - Start by creating a new function and call it `calculate_naughty`. It should have the classifier, accuracy and a twitter username is parameters.
 
@@ -23,7 +23,6 @@ def calculate_naughty(classifier, accuracy, user):
 <source src="images/vid_12.webm" type="video/webm">
 Your browser does not support WebM video, try FireFox or Chrome
 </video>
-
 --- /hint --- --- /hints ---
 
 - Your new `rating` list should now contain a large list with a mixture of `'negative'` and `'positive'` items. Write a few lines of code that will:
@@ -32,7 +31,14 @@ Your browser does not support WebM video, try FireFox or Chrome
   - Print out that the user is nice if the percentage is equal to or less than 50%
   - Optionally print out the accuracy of the algorithm.
 
-If your're stuck then look at the video in the hint below.
+If you're stuck then look at the video in the hint below.
+
+--- hints --- --- hint ---
+<video width="560" height="315" controls>
+<source src="images/vid_13.webm" type="video/webm">
+Your browser does not support WebM video, try FireFox or Chrome
+</video>
+--- /hint --- --- /hints ---
 
 - You can complete your code by calling the function and giving it a user to collect tweets from. For example, adding this line to the end of your code.
 

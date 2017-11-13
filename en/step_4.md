@@ -2,7 +2,7 @@
 
 In this step, you will learn how to select certain tweets from the stream, that can be analysed.
 
-You need an easy way to categorise whether any particular tweet reflects a positive sentiment or a negative sentiment. This could be done by looking at words with positive and negative conetations. But words can hav different meanings in different contexts. The word `bad` for instance could be deemed to be negative, but in the sentence `He's not a bad guy.` it takes on a positive meaning. Similarly `love` could be thought of as a positive word, except in sentences such as `I love watching children fall over.`
+You need an easy way to categorise whether any particular tweet reflects a positive sentiment or a negative sentiment. This could be done by looking at words with positive and negative connotations. But words can have different meanings in different contexts. The word `bad` for instance could be deemed to be negative, but in the sentence `He's not a bad guy.` it takes on a positive meaning. Similarly `love` could be thought of as a positive word, except in sentences such as `I love watching children fall over.`
 
 To get around this, you are going to categorise tweets using emojis. Emojis are fairly easy to categorise. For instance the presence of 😙 and ❤ in a tweet would generally indicate that it is a positive tweet. 😩 and 💔 would probably indicate negative tweets though.
 

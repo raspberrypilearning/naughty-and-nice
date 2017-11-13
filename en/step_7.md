@@ -25,14 +25,14 @@ Now the two sets look like this
 {'☔', 'e', 'I', 'i', 't', "'", 'p', 'n', 's', ' ', 'o', 'h'}
 {'☔', '☁', '☀', '⚡'}
 ```
-You can see the intersection fo the two sets fairly easily.
+You can see the intersection of the two sets fairly easily.
 ```python
 >>> set(text) & set(weather)
 {'☔'}
 >>>
 ```
 
-So to see if two strings contain any of the same characters, you just need to see if their set intersections are empyty or no. For example:
+So to see if two strings contain any of the same characters, you just need to see if their set intersections are empty or no. For example:
 
 ```python
 if set(text) & set(weather):
@@ -50,9 +50,9 @@ Your browser does not support WebM video, try FireFox or Chrome
 
 --- /hint --- --- /hints ---
 
-To finish off this function, you're also going to want to remove any emoji that are in the positive and negatrive tweets. You want the sentiment analysis to be conducted on words alone, and not influenced by any emoji in the text.
+To finish off this function, you're also going to want to remove any emoji that are in the positive and negative tweets. You want the sentiment analysis to be conducted on words alone, and not influenced by any emoji in the text.
 
-- You can use regex to remove any character that is not an ascii character (the normal set that you see on a standard keyboard), from the positive and negative tweets.
+- You can use regex to remove any character that is not an ASCII character (the normal set that you see on a standard keyboard), from the positive and negative tweets.
 
 ```python
 positive_tweets = [re.sub(r'[^\x00-\x7F]+','', tweet) for tweet in positive_tweets]

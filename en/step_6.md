@@ -1,6 +1,6 @@
 ## Cleaning up the tweets.
 
-At the moment the tweets you have collected contain information we'd rather not include when running a sentiment analysis. This includes any @mentions, any urls and any punctuation. So the next step is to strip that information out of the tweets, leaving only the words and the emojis.
+At the moment the tweets you have collected contain information we'd rather not include when running a sentiment analysis. This includes any @mentions, any URLs and any punctuation. So the next step is to strip that information out of the tweets, leaving only the words and the emojis.
 
 - Start by creating a new function called `clean_tweets`. This can go just above your `##EXECUTE THE PROGRAM` section.
 
@@ -45,7 +45,7 @@ re.sub(r'£\S+', '', my_string)
 ```
 --- /collapse ---
 
-- Use regex to iterate over all the tweets in the list of tweets and remove all the `@mentions` and all the urls that start with `http`.
+- Use regex to iterate over all the tweets in the list of tweets and remove all the `@mentions` and all the URLs that start with `http`.
 
 --- hints --- --- hint ---
 <video width="560" height="315" controls>
@@ -61,7 +61,7 @@ Now you need to remove the punctuation. You can use the `translate` method to do
 ---
 title: Using `translate`
 ---
-The `translate` method can be used to translate one character into another. The `translate` method needs to be provided with a dictionary of characters, where the key is the unicode point of the characters and the value is the character to be replaced with.
+The `translate` method can be used to translate one character into another. The `translate` method needs to be provided with a dictionary of characters, where the key is the Unicode point of the characters and the value is the character to be replaced with.
 
 ```python
 >>> 'gold'.translate({ord('d'):'f'})
@@ -69,7 +69,7 @@ The `translate` method can be used to translate one character into another. The 
 >>>
 ```
 
-If you wanted to translate all the ascii characters in a string into whitespace, it might take a while to create the dictionary. Luckily the `string` module and a dictionary comprehension can help out here.
+If you wanted to translate all the ASCII characters in a string into whitespace, it might take a while to create the dictionary. Luckily the `string` module and a dictionary comprehension can help out here.
 
 ```python
 >>> import string

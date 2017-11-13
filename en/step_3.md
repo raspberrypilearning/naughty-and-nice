@@ -2,11 +2,11 @@
 
 This step involves using a lot of boiler plate code to fetch a user's Twitter stream and to fetch random live tweets.
 
-- You will need a Twitter account and then will need to create a new App, associated with this account. You can see how to do this in the collapsobale section below.
+- You will need a Twitter account and then will need to create a new App, associated with this account. You can see how to do this in the collapsible section below.
 
 [[[generic-api-registering-twitter]]]
 
-- Now create a new Python file in your prefered editor (use IDLE if you have no preference) and call it `naughty_and_nice.py`.
+- Now create a new Python file in your preferred editor (use IDLE if you have no preference) and call it `naughty_and_nice.py`.
 - Into this file you can now set up your connection to Twitter, so that you can fetch a user's tweets and also fetch a live stream of current tweets. **Make sure to add in the path to your `twitter_auth.json` file correctly.**
 
 ```python
@@ -50,4 +50,4 @@ myStreamListener = MyStreamListener()
 myStream = tweepy.Stream(auth = api.auth, listener=myStreamListener)
 ```
 
-With all the boiler plate code written you can now progress to learning how to read a Twitter stream and start to categoirise tweets.
+With all the boiler plate code written you can now progress to learning how to read a Twitter stream and start to categorise tweets.

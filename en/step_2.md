@@ -8,4 +8,4 @@
 
 + Python 3
 + Tweepy Python library - `pip3 install tweepy`
-+ NTLK Python library - `pip3 install ntlk`
++ NLTK Python library - `pip3 install nltk`

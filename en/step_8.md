@@ -1,6 +1,6 @@
 ## Parsing tweets
 
-For the program to be able to categorise a tweet, the text needs to be in a particular form. This is called string parsing. In the case of the natural language processer you will be using, each tweet needs stripping of words that have no real sentiment, and then placing in a dictionary that will look a little like this:
+For the program to be able to categorise a tweet, the text needs to be in a particular form. This is called string parsing. In the case of the natural language processor you will be using, each tweet needs stripping of words that have no real sentiment, and then placing in a dictionary that will look a little like this:
 
 ```python
 {'why': True, 'want': True, 'talk': True, 'happy': True, 'today': True, 'hello': True}
@@ -13,7 +13,7 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 ```
 
-- Then create a new function called `parse_tweets`. The function can take any stringg as a parameter.
+- Then create a new function called `parse_tweets`. The function can take any string as a parameter.
 
 ```python
 def parse_tweets(words):
@@ -33,7 +33,7 @@ def parse_tweets(words):
 	words = word_tokenize(words)
 ```
 
-- Next you can use a feature of `ntlk` called `stopwords`. These are words like 'i', 'me', and 'my' that don't really carry any meaning. You can see all the `stopwords` by typing the following into your shell.
+- Next you can use a feature of `nltk` called `stopwords`. These are words like 'i', 'me', and 'my' that don't really carry any meaning. You can see all the `stopwords` by typing the following into your shell.
 
 ```python
 >>> from nltk.corpus import stopwords
