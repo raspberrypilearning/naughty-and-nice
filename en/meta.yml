@@ -15,5 +15,11 @@ steps:
   - title: What you will need
   - title: Setting up and testing your Twitter account
   - title: Reading the Twitter steam
-  - title: Storing Tweets.
-  - title: Cleaning up the tweets.
+  - title: Storing Tweets
+  - title: Cleaning up the tweets
+  - title: Sorting tweets
+  - title: Parsing tweets
+  - title: Training a classifier
+  - title: Calculating naughtiness
+  - title: "Challenge: Making it interactive"
+  

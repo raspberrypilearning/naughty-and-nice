@@ -42,8 +42,6 @@ all_emojis = list(pos_emojis + neg_emojis)
 
 ##FETCH SOME TWEETS
 myStream.filter(track=all_emojis, languages=['en'])
-user = "coding2learn"
-user_tweets = api.user_timeline(screen_name = user ,count=200)
 
 def store_tweets(file, tweets):
     '''Read tweets from file and write new tweets to the file'''
@@ -62,10 +60,10 @@ def store_tweets(file, tweets):
 
 def clean_tweets(tweets):
     '''Remove new lines and puntuation from tweets'''
-    translator = str.maketrans('', '', string.punctuation)    
     tweets = [tweet.rstrip() for tweet in tweets]
     tweets = [re.sub(r'\@\w+\b',"",tweet) for tweet in tweets]
     tweets = [re.sub(r'http\S+', '', tweet) for tweet in tweets]
+    translator = str.maketrans('', '', string.punctuation)    
     tweets = [tweet.translate(translator) for tweet in tweets]
     return tweets
     
@@ -79,16 +77,19 @@ def sort_tweets(tweets):
     return(positive_tweets, negative_tweets)
 
 
-def categorise_tweets(words):
+def parse_tweets(words):
     '''Turn tweets into form understood by sentiment anlysis tool'''
+    words = words.lower()
+    words = word_tokenize(words)
     useful_words = [word for word in words if word not in stopwords.words("english")]
-    my_dict = dict([(word, True) for word in useful_words])
-    return my_dict
+    word_dictionary = dict([(word, True) for word in useful_words])
+    return word_dictionary
+
 
 def train_classifier(positive_tweets, negative_tweets):
     '''Train the sentiment analysis'''
-    positive_tweets = [(categorise_tweets(word_tokenize(tweet)),'positive') for tweet in positive_tweets]
-    negative_tweets = [(categorise_tweets(word_tokenize(tweet)),'negative') for tweet in negative_tweets]
+    positive_tweets = [(parse_tweets(tweet),'positive') for tweet in positive_tweets]
+    negative_tweets = [(parse_tweets(tweet),'negative') for tweet in negative_tweets]
     fraction_pos =  round(len(positive_tweets) * 0.8)
     fraction_neg =  round(len(negative_tweets) * 0.8)
     train_set = negative_tweets[:fraction_pos] + positive_tweets[:fraction_pos]
@@ -98,10 +99,13 @@ def train_classifier(positive_tweets, negative_tweets):
     return classifier, accuracy
 
 
-def calculate_naughty(classifier, accuracy, user_tweets):
+def calculate_naughty(classifier, accuracy, user):
     '''Run sentiment analysis'''
-    rating = [classifier.classify(categorise_tweets(word_tokenize(tweet))) for tweet in user_tweets]
-    percent_naughty = rating.count('negative') / 200
+    user_tweets = api.user_timeline(screen_name = user ,count=200)
+    user_tweets = [tweet.text for tweet in user_tweets]
+    user_tweets = clean_tweets(user_tweets)                                  
+    rating = [classifier.classify(parse_tweets(tweet)) for tweet in user_tweets]
+    percent_naughty = rating.count('negative') / len(rating)
     if percent_naughty > 0.5:
         print(user, "is", percent_naughty * 100, "percent NAUGHTY, with an accuracy of", accuracy)
     else:
@@ -110,8 +114,6 @@ def calculate_naughty(classifier, accuracy, user_tweets):
 ##EXECUTE
 tweets = store_tweets('tweets.txt', tweets)
 tweets = clean_tweets(tweets)
-user_tweets = [tweet.text for tweet in user_tweets]
-user_tweets = clean_tweets(user_tweets)                                  
 pos_tweets, neg_tweets = sort_tweets(tweets)
 classifier, accuracy = train_classifier(pos_tweets, neg_tweets)
-calculate_naughty(classifier, accuracy, user_tweets)
+calculate_naughty(classifier, accuracy, 'coding2learn')

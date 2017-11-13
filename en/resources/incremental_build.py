@@ -3,6 +3,10 @@ import tweepy
 import json
 import re
 import string
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+import nltk.classify.util
+from nltk.classify import NaiveBayesClassifier
 
 ##SET UP TWITTER
 with open('/home/mjs/twitter_auth.json') as f:
@@ -57,7 +61,7 @@ def clean_tweets(tweets):
     tweets = [tweet.rstrip() for tweet in tweets]
     tweets = [re.sub(r'@\S+', '', tweet) for tweet in tweets]
     tweets = [re.sub(r'http\S+', '', tweet) for tweet in tweets]
-    tweets = [tweet.translate({ord(char): '' for char in string.punctuation}) for tweet in tweets]
+    tweets = [tweet.translate({ord(char): ' ' for char in string.punctuation}) for tweet in tweets]
     return tweets
 
 def sort_tweets(tweets):
@@ -67,10 +71,27 @@ def sort_tweets(tweets):
     negative_tweets = [re.sub(r'[^\x00-\x7F]+', '', tweet) for tweet in negative_tweets]
     return positive_tweets, negative_tweets
     
-    
+def parse_tweets(words):
+    words = words.lower()
+    words = word_tokenize(words)
+    useful_words = [word for word in words if word not in stopwords.words("english")]
+    word_dictionary = dict([(word, True) for word in useful_words])
+    return word_dictionary    
+
+def train_classifier(positive_tweets, negative_tweets):
+    positive_tweets = [(parse_tweets(tweet),'positive') for tweet in positive_tweets]
+    negative_tweets = [(parse_tweets(tweet),'negative') for tweet in negative_tweets]
+    fraction_pos =  round(len(positive_tweets) * 0.8)
+    fraction_neg =  round(len(negative_tweets) * 0.8)
+	
+    train_set = negative_tweets[:fraction_pos] + positive_tweets[:fraction_pos]
+    test_set =  negative_tweets[fraction_neg:] + positive_tweets[fraction_neg:]
+    classifier = NaiveBayesClassifier.train(train_set)
+    accuracy = nltk.classify.util.accuracy(classifier, test_set)
+    return classifier, accuracy
 ##EXECUTE THE PROGRAM
+
 tweets = store_tweets('tweets.txt', tweets)
 tweets = clean_tweets(tweets)
 pos_tweets, neg_tweets = sort_tweets(tweets)
-
-
+classifier, accuracy = train_classifier(pos_tweets, neg_tweets)
