@@ -6,12 +6,12 @@ You need an easy way to categorise whether any particular tweet reflects a posit
 
 To get around this, you are going to categorise tweets using emojis. Emojis are fairly easy to categorise. For instance the presence of 😙 and ❤ in a tweet would generally indicate that it is a positive tweet. 😩 and 💔 would probably indicate negative tweets though.
 
-- Start by creating two strings, one for positive and one for negative emojis. This can go at the end of the `naughty_and_nice.py` file you have created. You can add more emojis than are shown here, if you like.
+- Start by creating two lists, one for positive and one for negative emojis. This can go at the end of the `naughty_and_nice.py` file you have created. You can add more emojis than are shown here, if you like.
 
 ```python
 ##EMOJI DATA
-pos_emojis = '😙❤😍💓😗☺😊😛💕😀😃😚'
-neg_emojis = '☹😕😩😒😠😐😦😣😫😖😞💔😢😟'
+pos_emojis = ['😙','❤','😍','💓','😗','☺','😊','😛','💕','😀','😃','😚']
+neg_emojis = ['☹','😕','😩','😒','😠','😐','😦','😣','😫','😖','😞','💔','😢','😟']
 ```
 
 --- collapse ---
@@ -28,10 +28,10 @@ neg_emojis = [chr(uni for uni in [9785, 128533, 128553, 128530, 128544, 128528, 
 - This is essentially the same as using the emojis, but instead uses their **code point** which is then converted to the character.
 --- /collapse ---
 
-- You then need to create a list that contains all of the `pos_emojis` and all of the `neg_emojis`
+- You then need to create a single string containing all the emojis, to be used in the search of tweets.
 
 ```python
-all_emojis = list(pos_emojis + neg_emojis)
+all_emojis = "".join(pos_emojis + neg_emojis)
 ```
 
 - Now you can start to fetch 200 tweets, but only if they are in English and contain one or more of the listed emojis.
