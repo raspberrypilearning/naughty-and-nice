@@ -16,9 +16,7 @@ Your browser does not support WebM video, try FireFox or Chrome
 
 This project covers elements from the following strands of the [Raspberry Pi Digital Making Curriculum](http://rpf.io/curriculum):
 
-+ [Apply higher-order programming techniques to solve real-world problems
-
-](https://curriculum.raspberrypi.org/programming/maker/)
++ [Apply higher-order programming techniques to solve real-world problems](https://curriculum.raspberrypi.org/programming/maker/)
 
 ### Additional information for educators
 
