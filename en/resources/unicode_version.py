@@ -36,12 +36,12 @@ myStreamListener = MyStreamListener()
 myStream = tweepy.Stream(auth = api.auth, listener=myStreamListener)
 
 ##EMOJI DATA
-pos_emojis = '😙❤😍💓😗☺😊😛💕😀😃😚'
-neg_emojis = '☹😕😩😒😠😐😦😣😫😖😞💔😢😟'
-all_emojis = list(pos_emojis + neg_emojis)
+pos_emojis = [128537, 10084, 128525, 128147, 128535, 9786, 128522, 128539, 128149, 128512, 128515, 128538]
+neg_emojis = [9785, 128533, 128553, 128530, 128544, 128528, 128550, 128547, 128555, 128534, 128542, 128148, 128546, 128543]
+all_emojis = [chr(emoji) for emoji in pos_emojis] + [chr(emoji) for emoji in neg_emojis]
 
 ##FETCH SOME TWEETS
-myStream.filter(track=all_emojis, languages=['en'])
+myStream.filter(track="".join(all_emojis), languages=['en'])
 
 def store_tweets(file, tweets):
     '''Read tweets from file and write new tweets to the file'''
@@ -70,8 +70,8 @@ def clean_tweets(tweets):
 
 def sort_tweets(tweets):
     '''Sort tweets based on emojis'''
-    positive_tweets = [tweet for tweet in tweets if set(tweet) & set(pos_emojis)]
-    negative_tweets = [tweet for tweet in tweets if set(tweet) & set(neg_emojis)]
+    positive_tweets = [tweet for tweet in tweets if set(tweet) & set([chr(emoji) for emoji in pos_emojis])]
+    negative_tweets = [tweet for tweet in tweets if set(tweet) & set([chr(emoji) for emoji in neg_emojis])]
     positive_tweets = [re.sub(r'[^\x00-\x7F]+','', tweet) for tweet in positive_tweets]
     negative_tweets = [re.sub(r'[^\x00-\x7F]+','', tweet) for tweet in negative_tweets]
     return(positive_tweets, negative_tweets)
