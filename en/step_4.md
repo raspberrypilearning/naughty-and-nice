@@ -28,16 +28,6 @@ neg_emojis = [chr(uni for uni in [9785, 128533, 128553, 128530, 128544, 128528, 
 - This is essentially the same as using the emojis, but instead uses their **code point** which is then converted to the character.
 --- /collapse ---
 
-
-
-
---- collapse ---
----
-title: title
-image: images/image
----
-
---- /collapse ---
 - You then need to create a list that contains all of the `pos_emojis` and all of the `neg_emojis`
 
 ```python
