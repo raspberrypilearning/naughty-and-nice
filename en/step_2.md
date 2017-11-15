@@ -9,7 +9,7 @@
 + Python 3
 + Tweepy Python library - `pip3 install tweepy`
 + NLTK Python library - `pip3 install nltk`
-  + Following installation of the `nltk` library, you need to download the data. To do this, open a new python3 file and type the following.
+  + Following installation of the `nltk` library, you need to download the data. To do this, open a new python3 file and type the following and then run it.
   ```python
   import nltk
   nltk.download()
