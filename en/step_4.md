@@ -17,6 +17,7 @@ neg_emojis = '☹😕😩😒😠😐😦😣😫😖😞💔😢😟'
 --- collapse ---
 ---
 title: Instructions if your text editor does not allow emojis
+---
 - Some text editors and IDEs don't allow emoji characters. If this is the case for you, you can use the following two lines instead.
 
 ```python
@@ -25,9 +26,18 @@ neg_emojis = [chr(uni for uni in [9785, 128533, 128553, 128530, 128544, 128528, 
 ```
 
 - This is essentially the same as using the emojis, but instead uses their **code point** which is then converted to the character.
----
 --- /collapse ---
 
+
+
+
+--- collapse ---
+---
+title: title
+image: images/image
+---
+
+--- /collapse ---
 - You then need to create a list that contains all of the `pos_emojis` and all of the `neg_emojis`
 
 ```python
