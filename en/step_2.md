@@ -16,6 +16,5 @@
   ```
   + This will open the Downloader as shown below
   ![pic_1.png](images/pic_1.png)
-  + Click the Download button to begin the download process. This can take some time.
-Run this
-+ A text editor or IDE other than IDLE (which doesn't support emoji characters)
+  + Double click on `popular` to download the most popular parts of the library.
+
