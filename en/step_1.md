@@ -2,7 +2,7 @@
 
 It's been a hard year for Santa, and he's not had much of an opportunity to make a list and he certainly has no time to check it twice! To help Santa out, you're going to make a sentiment analysis bot, that can look over a Twitter user's last 200 tweets and make a decision about whether they are naughty or nice.
 
-This is a fairly advanced project and is best suited to learners who are reasonable experience in a programming language,
+This is a fairly advanced project and is best suited for learners with a reasonable experience of a programming language,
 
 ### What you will make
 
@@ -14,9 +14,9 @@ Your browser does not support WebM video, try FireFox or Chrome
 
 ### What you will learn
 
-This project covers elements from the following strands of the [Raspberry Pi Digital Making Curriculum](http://rpf.io/curriculum):
+This project covers elements from the following strands of the [Raspberry Pi Digital Making Curriculum](http://rpf.io/curriculum){:target="_blank"}:
 
-+ [Apply higher-order programming techniques to solve real-world problems](https://curriculum.raspberrypi.org/programming/maker/)
++ [Apply higher-order programming techniques to solve real-world problems](https://curriculum.raspberrypi.org/programming/maker/){:target="_blank"}
 
 ### Additional information for educators
 

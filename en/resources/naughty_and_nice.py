@@ -103,7 +103,8 @@ def calculate_naughty(classifier, accuracy, user):
     '''Run sentiment analysis'''
     user_tweets = api.user_timeline(screen_name = user ,count=200)
     user_tweets = [tweet.text for tweet in user_tweets]
-    user_tweets = clean_tweets(user_tweets)                                  
+    user_tweets = clean_tweets(user_tweets)
+    user_tweets = [tweet.lower() for tweet in user_tweets]
     rating = [classifier.classify(parse_tweets(tweet)) for tweet in user_tweets]
     percent_naughty = rating.count('negative') / len(rating)
     if percent_naughty > 0.5:
@@ -116,4 +117,9 @@ tweets = store_tweets('tweets.txt', tweets)
 tweets = clean_tweets(tweets)
 pos_tweets, neg_tweets = sort_tweets(tweets)
 classifier, accuracy = train_classifier(pos_tweets, neg_tweets)
-calculate_naughty(classifier, accuracy, 'ejdigby')
+calculate_naughty(classifier, accuracy, 'philipcolligan')
+calculate_naughty(classifier, accuracy, 'coding2learn')
+calculate_naughty(classifier, accuracy, 'MissPhilbin')
+calculate_naughty(classifier, accuracy, 'CodeClubRik')
+calculate_naughty(classifier, accuracy, 'CodeBoom')
+calculate_naughty(classifier, accuracy, 'realDonaldTrump')

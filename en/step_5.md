@@ -1,4 +1,4 @@
-## Storing Tweets.
+## Storing Tweets
 
 The more data you have, the more accurate your sentiment analysis will be. At the moment, you have `201` tweets, which is not really enough. However, collecting thousands of tweets in one go would take ages, and the list of tweets would be emptied each time you ran the program. For this reason you're going to save the tweets into a file, so that with each run of your program, your data set will grow.
 
@@ -10,7 +10,14 @@ def store_tweets(file, tweets):
 
 - In the same directory as your Python file, create a new empty file called `tweets.txt`. This will be where the tweets are stored.
 
-The first step will be to open the `tweets.txt` file and load up any tweets that are there. Then you will need to combine these tweets with the list of tweets that were most recently collected. All duplicate tweets should be removed, and then all the tweets can be written back to the file again. If you're confident on how to do this, then have a go. If not, you might find the sections below helpful.
+The first step will be to open the `file` file, that will be passed in as an argument. Then load up any tweets that are there. The first time you run the program, this will be an empty file, but it will soon collect **a lot** of tweets.
+
+Next you will need to follow a few steps:
+1. combine these tweets with the list of tweets that were most recently collected
+1. duplicate tweets should be removed
+1. combined old and new tweets should be written back into the file
+	
+- If you're confident on how to do this, then have a go. If not, you might find the sections below helpful.
 
 --- collapse ---
 ---
@@ -28,7 +35,7 @@ with open('filename.txt', 'r') as f:
 ```
 --- /collapse ---
 
-- In your function, open up the `tweets.txt` file and load all the data into a list called `old_tweets`
+- In your function, open up the `file` file and load all the data into a list called `old_tweets`
 
 --- hints --- --- hint ---
 <video width="560" height="315" controls>
@@ -102,7 +109,7 @@ title: Write a list to a file.
 ---
 First you need to open a file in a writable mode.
 ```python
-with open('filename.txt') as f:
+with open('filename.txt', 'w') as f:
 ```
 
 You can then use the `writelines` function to write out the contents of the list into the file.
@@ -122,3 +129,11 @@ Your browser does not support WebM video, try FireFox or Chrome
 </video>
 
 --- /hint --- --- /hints ---
+
+- to test if your code works, run the file and then type the following into the shell.
+
+```python
+store_tweets('tweets.txt', tweets)
+```
+
+- If everything worked correctly, when you open the file `tweets.txt`, then it should contain a few hundred tweets.
