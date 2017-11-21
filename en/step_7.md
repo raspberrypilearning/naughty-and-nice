@@ -4,7 +4,8 @@ Now that you have an ever growing list of recent tweets, you need to categorise 
 
 Tackling the positive tweets first, you can again use Python's `set` data structure to see which tweets have positive emojis in them. If the `set` of a tweet contains the same characters as the `set` of positive emoji, then the tweet can be classified as positive. In set theory this is called the `intersection` and in Python you can use the `&` operator to find this.
 
-- Using `set` build a list of all tweets that contain a positive emoji. If you're completely stumped then have a look at the section below.
+- Create a function called `sort_tweets` that takes the list of tweets as an argument.
+- Now, using `set` build a list of all tweets that contain a positive emoji. You could do this using another list comprehension, or just a looop if you prefer. If you're completely stumped then have a look at the section below.
 
 --- collapse ---
 ---
@@ -52,7 +53,7 @@ Your browser does not support WebM video, try FireFox or Chrome
 
 To finish off this function, you're also going to want to remove any emoji that are in the positive and negative tweets. You want the sentiment analysis to be conducted on words alone, and not influenced by any emoji in the text.
 
-- You can use regex to remove any character that is not an ASCII character (the normal set that you see on a standard keyboard), from the positive and negative tweets.
+- You can use regex to remove any character that is not an ASCII character (the normal set that you see on a standard keyboard), from the positive and negative tweets. This will remove the emoji, which we no longer need, as the tweets have been classified as positive or negative.
 
 ```python
 positive_tweets = [re.sub(r'[^\x00-\x7F]+','', tweet) for tweet in positive_tweets]
@@ -61,7 +62,7 @@ negative_tweets = [re.sub(r'[^\x00-\x7F]+','', tweet) for tweet in negative_twee
 
 - Then at the end you can return the positive and negative tweets.
 
-- Finally, on the last line of code, you can add a line to call this function, saving it's output as `pos_tweets` and `neg_tweets`
+- Finally, at the end of the file, you can add a line to call this function, saving it's output as `pos_tweets` and `neg_tweets`
 
 --- hints --- --- hint ---
 <video width="560" height="315" controls>

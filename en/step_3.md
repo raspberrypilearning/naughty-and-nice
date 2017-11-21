@@ -2,7 +2,7 @@
 
 This step involves using a lot of code to fetch a user's Twitter stream and to fetch random live tweets.
 
-- You will need a Twitter account and then will need to create a new App, associated with this account. You can see how to do this in the collapsible section below.
+- You will need a Twitter account and then will need to create a new App, associated with this account. An App is simply a program that you are linking to your Twitter account.  You can see how to do this in the collapsible section below.
 
 [[[generic-api-registering-twitter]]]
 
@@ -42,7 +42,7 @@ tweets = []
 class MyStreamListener(tweepy.StreamListener):
 
     def on_status(self, status):
-        tweets.append(status.text.rstrip().encode('utf8'))
+        tweets.append(status.text.rstrip())
         if len(tweets) > 200:
             myStream.disconnect()
 
@@ -50,10 +50,10 @@ myStreamListener = MyStreamListener()
 myStream = tweepy.Stream(auth = api.auth, listener=myStreamListener)
 ```
 
-- Having written this, you can now test your code works. Add this line of code at the end of your file, to search Twitter for the word 'Santa'.
+- Having written this, you can now test your code works. Add this line of code at the end of your file, to search Twitter for the word 'christmas'. This might take a long time to run.
 
 ```python
-myStream.filter(track=["Santa"], languages=['en'])
+myStream.filter(track=["christmas"], languages=['en'])
 ```
 
-- You should see a list of tweets printed out in the shell. If everything works correctly, remove that last line.
+- You can view the first tweet by typing `tweets[0]` in the shell, once the program has finished. Be warned though, that if you are using IDLE as your programming environment, it will crash if the tweet contains an emoji.

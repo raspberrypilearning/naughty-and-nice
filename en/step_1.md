@@ -4,6 +4,8 @@ It's been a hard year for Santa, and he's not had much of an opportunity to make
 
 This is a fairly advanced project and is best suited for learners with a reasonable experience of a programming language,
 
+This project uses Twitter, which requires the learner to be at least 13 years of age. It uses a live stream from Twitter which might contain some profanity and inappropriate language, so it is best suited for older learners.
+
 ### What you will make
 
 Here's a little example video, showing the output of the program.

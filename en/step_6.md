@@ -1,4 +1,4 @@
-## Cleaning up the tweets.
+## Cleaning up the tweets
 
 At the moment the tweets you have collected contain information we'd rather not include when running a sentiment analysis. This includes any @mentions, any URLs and any punctuation. So the next step is to strip that information out of the tweets, leaving only the words and the emojis.
 
@@ -24,13 +24,15 @@ Here is a simple string.
 ```python
 my_string = "The price of milk is £0.45 a pint"
 ```
-Now image you wanted to remove price of milk.
+Now imagine you wanted to remove the `£0.45` from the above string.
 
 - Start by removing the `£` sign, using the `re.sub` method to replace it with an empty string..
 
 ```python
 re.sub(r'£', '', my_string)
 ```
+
+The `r` before the string is to ensure that string is treated as a raw string. This is important, as otherwise the `\` character is treated as an escape.
 
 - Next you can remove any character straight after the `£` sign, as long as it's not a whitespace character, using the `\S` pattern.
 
@@ -59,13 +61,13 @@ Now you need to remove the punctuation. You can use the `translate` method to do
 
 --- collapse ---
 ---
-title: Using `translate`
+title: Using translate
 ---
-The `translate` method can be used to translate one character into another. The `translate` method needs to be provided with a dictionary of characters, where the key is the Unicode point of the characters and the value is the character to be replaced with.
+The `translate` method can be used to translate one character into another. The `translate` method needs to be provided with a dictionary of characters, where the key is the Unicode point of the character (`ord('d')` for example) and the value is the character to be replaced with.
 
 ```python
 >>> 'gold'.translate({ord('d'):'f'})
-'gold'
+'golf'
 >>>
 ```
 

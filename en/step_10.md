@@ -11,9 +11,9 @@ def calculate_naughty(classifier, accuracy, user):
 - Next you can fetch the last 200 tweets of any twitter user. The list of tweets will also need to be cleaned, using the `clean_tweets` function.
 
 ```python
-    user_tweets = api.user_timeline(screen_name = user ,count=200)
-    user_tweets = [tweet.text for tweet in user_tweets]
-    user_tweets = clean_tweets(user_tweets)                                  
+user_tweets = api.user_timeline(screen_name = user ,count=200)
+user_tweets = [tweet.text for tweet in user_tweets]
+user_tweets = clean_tweets(user_tweets)
 ```
 
 - Now for the analysis. Use a list comprehension to create a new list called `rating`. This should iterate over the `user_tweets` list, run the tweet through the `parse_tweet` function and then classify it (using `classifier.classify()`. If you can't figure it out, use the video in the hint below.

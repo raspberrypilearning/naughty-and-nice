@@ -28,6 +28,11 @@ title: Reading a file into a list.
 with open('filename.txt', 'r') as f:
 ```
 
+**If you are using Windows you may have issues if you do not specify an encoding type. So use this code instead.**
+```python
+with open('filename.txt', 'r', encoding='utf8') as f:
+```
+
 - To read each line of the file into a list, you can use `readlines`.
 ```python
 with open('filename.txt', 'r') as f:
@@ -109,13 +114,19 @@ title: Write a list to a file.
 ---
 First you need to open a file in a writable mode.
 ```python
-with open('filename.txt', 'w') as f:
+with open('tweets.txt', 'w') as f:
+```
+
+**If you are using Windows you may have issues if you do not specify an encoding type. So use this code instead.**
+
+```python
+with open('tweets.txt', 'w', encoding='utf8') as f:
 ```
 
 You can then use the `writelines` function to write out the contents of the list into the file.
 
 ```python
-with open('filename.txt') as f:
+with open('tweets.txt', 'w') as f:
 	f.writelines(all_tweets)
 ```
 --- /collapse ---

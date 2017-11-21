@@ -1,8 +1,8 @@
 ## Training a classifier
 
-The `classifier` will be able to tell if a tweet has a positive or negative sentiment. First it needs training though, to teach it what positive tweets and negative tweets look like.
+The `classifier` will be able to tell if a tweet has a positive or negative sentiment. First it needs training though, to teach it what positive tweets and negative tweets look like. If you're not interested in how the `classifier` works, as it can be quite tricky to understand then the full code for the function is provided at the bottom of this step. 
 
-- A few new module will need to be imported at the top of you program
+- A few new modules will need to be imported at the top of your program
 
 ```python
 import nltk.classify.util
@@ -15,7 +15,13 @@ from nltk.classify import NaiveBayesClassifier
 def train_classifier(positive_tweets, negative_tweets):
 ```
 
-- The next thing to do is to create new data structures that will like the words in the positive tweets to having a positive sentiment and the words in the negative tweet as having a negative sentiment. This simply creates tuples of tweets, containing the dictionary created in the `parse_tweets` function and then the word `positive` or `negative` depending on which list the tweet came from.
+The next thing to do is to create new data structures that will take the words in the positive tweets to having a positive sentiment and the words in the negative tweet as having a negative sentiment. This simply creates tuples of tweets, containing the dictionary created in the `parse_tweets` function and then the word `positive` or `negative` depending on which list the tweet came from. So for a single tweet, you might get a tuple that looks like this:
+
+```python
+({'why': True, 'want': True, 'talk': True, 'happy': True, 'today': True, 'hello': True}, 'positive')
+```
+
+- Add these lines to your function.
 
 ```python
 def train_classifier(positive_tweets, negative_tweets):
@@ -27,10 +33,10 @@ def train_classifier(positive_tweets, negative_tweets):
 
 ```python
 def train_classifier(positive_tweets, negative_tweets):
-    positive_tweets = [(parse_tweets(tweet),'positive') for tweet in positive_tweets]
-    negative_tweets = [(parse_tweets(tweet),'negative') for tweet in negative_tweets]
+	positive_tweets = [(parse_tweets(tweet),'positive') for tweet in positive_tweets]
+	negative_tweets = [(parse_tweets(tweet),'negative') for tweet in negative_tweets]
 	fraction_pos =  round(len(positive_tweets) * 0.8)
-    fraction_neg =  round(len(negative_tweets) * 0.8)
+	fraction_neg =  round(len(negative_tweets) * 0.8)
 ```
 
 - Next the training set and the testing set can be created, by joining 80% of the positive tweets and 80% of the negative tweets into one giant list of categorised tweets. The remaining tweets are used in the testing set. Then the `classifier` can be created and the accuracy calculated.

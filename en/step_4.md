@@ -28,11 +28,21 @@ neg_emojis = [chr(uni) for uni in [9785, 128533, 128553, 128530, 128544, 128528,
 - This is essentially the same as using the emojis, but instead uses their **code point** which is then converted to the character.
 --- /collapse ---
 
-- You then need to create a list containing all the emojis, to be used in the search of tweets.
+- You then need to create a list called `all_emojis` containing all the emojis, to be used in the search of tweets.
 
+--- hints --- --- hint ---
+You can combine lists together by concatonating them.
+--- /hint --- --- hint ---
+So to join two lists together, just use a `+` sign.
+```python
+new_list = old_list_1 + old_list_2
+--- /hint --- --- hint ---
+Here's the line you need
 ```python
 all_emojis = pos_emojis + neg_emojis
 ```
+--- /hint --- --- /hints ---
+
 
 - Now you can start to fetch 200 tweets, but only if they are in English and contain one or more of the listed emojis.
 
@@ -41,7 +51,7 @@ all_emojis = pos_emojis + neg_emojis
 myStream.filter(track=all_emojis, languages=['en'])
 ```
 
-- If you run this file and then switch into the shell, typing `tweets[0]` will show you the first tweet. similarly `tweets[200]` will show you the last tweet. Here's an example.
+- If you run this file and wait for it to finish running, you can switch into the shell, where typing `tweets[0]` will show you the first tweet. Similarly `tweets[200]` will show you the last tweet. Here's an example.
 
 ```python
 >>> tweets[134]

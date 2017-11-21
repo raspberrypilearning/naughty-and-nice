@@ -1,6 +1,6 @@
 ## Parsing tweets
 
-For the program to be able to categorise a tweet, the text needs to be in a particular form. This is called string parsing. In the case of the natural language processor you will be using, each tweet needs stripping of words that have no real sentiment, and then placing in a dictionary that will look a little like this:
+For the program to be able to categorise a tweet, the text needs to be in a particular form. This is called string parsing. In the case of the natural language processor you will be using, each tweet needs stripping of words that have no real sentiment. This will just leave useful words that can then be placed in a dictionary that will look a little like this:
 
 ```python
 {'why': True, 'want': True, 'talk': True, 'happy': True, 'today': True, 'hello': True}
@@ -53,7 +53,7 @@ Your browser does not support WebM video, try FireFox or Chrome
 def parse_tweets(words):
     words = words.lower()
     words = word_tokenize(words)
-    useful_words = [word for word in words if word not in stopwords.words("english")]
-    word_dictionary = dict([(word, True) for word in useful_words])
+    words = [word for word in words if word not in stopwords.words("english")]
+    word_dictionary = dict([(word, True) for word in words])
     return word_dictionary
 ```
