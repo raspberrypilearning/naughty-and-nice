@@ -16,7 +16,7 @@
   import nltk
   nltk.download()
   ```
-  + This will open the downloader GUI:
+  + This will open the NLTK Downloader GUI:
   ![pic_1.png](images/pic_1.png)
   + Double-click on **popular** to download the most popular parts of the library.
 
