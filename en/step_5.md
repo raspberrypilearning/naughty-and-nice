@@ -1,8 +1,8 @@
-## Storing Tweets
+## Storing tweets
 
-The more data you have, the more accurate your sentiment analysis will be. At the moment, you have `201` tweets, which is not really enough. However, collecting thousands of tweets in one go would take ages, and the list of tweets would be emptied each time you ran the program. For this reason you're going to save the tweets into a file, so that with each run of your program, your data set will grow.
+The more data you have, the more accurate your sentiment analysis will be. At the moment, you have 201 tweets, which is not really enough. However, collecting thousands of tweets in one go would take ages, and the list of tweets would be emptied each time you run the program. For this reason you're going to save the tweets into a file, so that with each run of your program, your data set will grow.
 
-- Start by creating a new function called `store_tweets`, at the end of your file. The function will have two parameters - the `file` to store the data in, and the `tweets` list you have created.
+- Start by creating a new function called `store_tweets` at the bottom of your file. The function will have two parameters: the `file` to store the data in, and the `tweets` list you have created.
 
 ```python
 def store_tweets(file, tweets):
@@ -10,25 +10,27 @@ def store_tweets(file, tweets):
 
 - In the same directory as your Python file, create a new empty file called `tweets.txt`. This will be where the tweets are stored.
 
-The first step will be to open the `file` file, that will be passed in as an argument. Then load up any tweets that are there. The first time you run the program, this will be an empty file, but it will soon collect **a lot** of tweets.
+The first step of your `store_tweets` function will be to open the `file` file that will be passed in as an argument. Then load up any tweets that are there.
 
-Next you will need to follow a few steps:
-1. combine these tweets with the list of tweets that were most recently collected
-1. duplicate tweets should be removed
-1. combined old and new tweets should be written back into the file
+The first time you run the program, `tweets.txt` will be empty, but it will soon contain **a lot** of tweets.
+
+Next your function needs to perform these steps:
+1. Combine these tweets with the ones in the `tweets` list, which were more recently collected
+1. Duplicate tweets should be removed
+1. The combined old and new tweets should be written back into the file
 	
 - If you're confident on how to do this, then have a go. If not, you might find the sections below helpful.
 
 --- collapse ---
 ---
-title: Reading a file into a list.
+title: Reading a file into a list
 ---
-- To open a file you first need to create a file object, that contains all the files data.
+- To open a file, you first need to create a file object that contains all the file's data.
 ```python
 with open('filename.txt', 'r') as f:
 ```
 
-**If you are using Windows you may have issues if you do not specify an encoding type. So use this code instead.**
+**If you are using Windows, you may have issues if you do not specify an encoding type. Use this code instead:**
 ```python
 with open('filename.txt', 'r', encoding='utf8') as f:
 ```
@@ -40,12 +42,12 @@ with open('filename.txt', 'r') as f:
 ```
 --- /collapse ---
 
-- In your function, open up the `file` file and load all the data into a list called `old_tweets`
+- In your function, open up the `file` file and load all the data into a list called `old_tweets`.
 
 --- hints --- --- hint ---
 <video width="560" height="315" controls>
 <source src="images/vid_2.webm" type="video/webm">
-Your browser does not support WebM video, try FireFox or Chrome
+Your browser does not support WebM video, so try FireFox or Chrome.
 </video>
 
 --- /hint --- --- /hints ---
@@ -56,13 +58,13 @@ Your browser does not support WebM video, try FireFox or Chrome
 all_tweets = old_tweets + tweets
 ```
 
-If you run the program fairly often, there will probably be duplicate tweets. These need to be removed. `sets` are a great way of removing duplicate items from a list. Have a look at the collapsible section below, to see how to achieve this.
+If you run the program fairly often, there will probably be duplicate tweets. These need to be removed. **Sets** are great for removing duplicate items from a list. Have a look at the collapsible section below to see how to use them.
 
 --- collapse ---
 ---
 title: Removing duplicates items from a list
 ---
-In Python a set is an unordered collection of unique items. But isn't very definition it can't have duplicates within it. Here is an example of a Python set.
+In Python, a **set** is an unordered collection of unique items. By its very definition it can't have duplicates within it. Here is an example of a Python set:
 
 ```python
 >>> my_set = {1,2,3,4}
@@ -100,24 +102,26 @@ Your browser does not support WebM video, try FireFox or Chrome
 
 There's one small problem with the current list of `all_tweets`. Some people like to place `newlines` into their tweets. These really need to be removed.
 
-- Add the following line to replace all newlines `\n` within a tweet with an empty string, and then add a single newline to the end.
+- Add the following line to replace all newlines (`\n`) within a tweet with an empty string (`''`), and then add a single newline to the end.
 
 ```python
 all_tweets = [tweet.replace('\n','')+"\n" for tweet in all_tweets]
 ```
 
-Lastly you need to write all the tweets back into the file. Have a look at the collapsible section below to see how to write a list to a file.
++ Lastly, you need to write all the tweets back into the file.
+
+Have a look at the collapsible section below if you need help with doing this.
 
 --- collapse ---
 ---
-title: Write a list to a file.
+title: Write a list to a file
 ---
-First you need to open a file in a writable mode.
+First you need to open a file in a writable mode:
 ```python
 with open('tweets.txt', 'w') as f:
 ```
 
-**If you are using Windows you may have issues if you do not specify an encoding type. So use this code instead.**
+**If you are using Windows you may have issues if you do not specify an encoding type. Use this code instead:**
 
 ```python
 with open('tweets.txt', 'w', encoding='utf8') as f:
@@ -131,20 +135,20 @@ with open('tweets.txt', 'w') as f:
 ```
 --- /collapse ---
 
-- Finish of the function by returning the `all_tweets` list. You can then call the function at the end of your program, saving it's output as `tweets`.
+- Finish off the function by returning the `all_tweets` list. You can then call the function at the end of your program, saving its output as `tweets`.
 
 --- hints --- --- hint ---
 <video width="560" height="315" controls>
 <source src="images/vid_4.webm" type="video/webm">
-Your browser does not support WebM video, try FireFox or Chrome
+Your browser does not support WebM video, so try FireFox or Chrome
 </video>
 
 --- /hint --- --- /hints ---
 
-- to test if your code works, run the file and then type the following into the shell.
+- To test if your code works, run the file and then type the following into the shell:
 
 ```python
 store_tweets('tweets.txt', tweets)
 ```
 
-- If everything worked correctly, when you open the file `tweets.txt`, then it should contain a few hundred tweets.
+- If everything works correctly, the file `tweets.txt` should now contain a few hundred tweets.
