@@ -1,38 +1,38 @@
 ## Cleaning up the tweets
 
-At the moment the tweets you have collected contain information we'd rather not include when running a sentiment analysis. This includes any @mentions, any URLs and any punctuation. So the next step is to strip that information out of the tweets, leaving only the words and the emojis.
+At the moment the tweets you have collected contain information we don't want to include in the sentiment analysis, such as any @mentions, URLs, and punctuation. So the next step is to strip the tweets of that information, leaving only the words and the emojis.
 
-- Start by creating a new function called `clean_tweets`. This can go just above your `##EXECUTE THE PROGRAM` section.
+- Start by creating a new function called `clean_tweets`. It can go just above your `##EXECUTE THE PROGRAM` section.
 
 ```python
 def clean_tweets(tweets):
 ```
 
-- The easiest way to remove these strings from the tweets is to use regex. Go back up to the top of your code and add the following into your imports.
+- The easiest way to remove these strings from the tweets is to use regular expressions (or regex). Go back up to the top of your program, and add the `re` module to your imports:
 
 ```python
 import re
 ```
 
-The collapsed section below provides details on how to use regex to remove words beginning with a certain string.
+The collapsible section below provides details on how to use regex to remove words beginning with a certain string.
 
 --- collapse ---
 ---
 title: Removing strings based on their beginning
 ---
-Here is a simple string.
+Here is a simple string:
 ```python
 my_string = "The price of milk is £0.45 a pint"
 ```
 Now imagine you wanted to remove the `£0.45` from the above string.
 
-- Start by removing the `£` sign, using the `re.sub` method to replace it with an empty string..
+- Start by removing the `£` sign, using the `re.sub` method to replace it with an empty string.
 
 ```python
 re.sub(r'£', '', my_string)
 ```
 
-The `r` before the string is to ensure that string is treated as a raw string. This is important, as otherwise the `\` character is treated as an escape.
+The `r` before the string is to ensure that the string is treated as a raw string. This is important, as otherwise the `\` character is treated as an escape.
 
 - Next you can remove any character straight after the `£` sign, as long as it's not a whitespace character, using the `\S` pattern.
 
@@ -40,30 +40,30 @@ The `r` before the string is to ensure that string is treated as a raw string. T
 re.sub(r'£\S', '', my_string)
 ```
 
-- This leaves `'The price of milk is .45 a pint'`. By adding a `+` pattern after the `\S` you are searching for every character after the `£` sign, until a whitespace character is found.
+- This leaves `'The price of milk is .45 a pint'`. Adding a `+` pattern after the `\S` will remove every character after the `£` sign until a whitespace character is encountered.
 
 ```python
 re.sub(r'£\S+', '', my_string)
 ```
 --- /collapse ---
 
-- Use regex to iterate over all the tweets in the list of tweets and remove all the `@mentions` and all the URLs that start with `http`.
+- Use regex to iterate over all the tweets in the list of tweets and remove all @mentions and URLs that start with 'http'.
 
 --- hints --- --- hint ---
 <video width="560" height="315" controls>
 <source src="images/vid_5.webm" type="video/webm">
-Your browser does not support WebM video, try FireFox or Chrome
+Your browser does not support WebM video, so try FireFox or Chrome.
 </video>
 
 --- /hint --- --- /hints ---
 
-Now you need to remove the punctuation. You can use the `translate` method to do this. Have a look at the collapsible section below if you need to learn how this is done.
+Now you need to remove the punctuation. You can use the `translate` method to do this. Have a look at the collapsible section below if you need to learn how this works.
 
 --- collapse ---
 ---
 title: Using translate
 ---
-The `translate` method can be used to translate one character into another. The `translate` method needs to be provided with a dictionary of characters, where the key is the Unicode point of the character (`ord('d')` for example) and the value is the character to be replaced with.
+The `translate` method can be used to translate one character into another. It needs to be provided with a dictionary of characters, where the key is the Unicode point of the character (`ord('d')` for example), and the value is the character to replace it.
 
 ```python
 >>> 'gold'.translate({ord('d'):'f'})
@@ -71,7 +71,7 @@ The `translate` method can be used to translate one character into another. The 
 >>>
 ```
 
-If you wanted to translate all the ASCII characters in a string into whitespace, it might take a while to create the dictionary. Luckily the `string` module and a dictionary comprehension can help out here.
+If you wanted to translate all the ASCII characters in a string into whitespace, it might take a while to create the dictionary. Luckily, the `string` module and a dictionary comprehension can help out here.
 
 ```python
 >>> import string
@@ -81,7 +81,7 @@ If you wanted to translate all the ASCII characters in a string into whitespace,
 >>>
 ```
 
-There are other methods available in the `string` module.
+There are other methods available in the `string` module:
 ```python
 string.ascii_lowercase ##all the lower case characters
 string.ascii_uppercase ##all the upper case characters
@@ -95,7 +95,7 @@ string.punctuation     ##all the punctuation symbols.
 --- hints --- --- hint ---
 <video width="560" height="315" controls>
 <source src="images/vid_6.webm" type="video/webm">
-Your browser does not support WebM video, try FireFox or Chrome
+Your browser does not support WebM video, so try FireFox or Chrome.
 </video>
 
 --- /hint --- --- /hints ---
@@ -111,6 +111,6 @@ tweets = [tweet.rstrip() for tweet in tweets]
 --- hints --- --- hint ---
 <video width="560" height="315" controls>
 <source src="images/vid_7.webm" type="video/webm">
-Your browser does not support WebM video, try FireFox or Chrome
+Your browser does not support WebM video, so try FireFox or Chrome.
 </video>
 --- /hint --- --- /hints ---
