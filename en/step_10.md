@@ -42,7 +42,7 @@ Your browser does not support WebM video, so try FireFox or Chrome.
 </video>
 --- /hint --- --- /hints ---
 
-- You can complete your code by calling the function and giving it a user from whom to collect tweets. For example, add this line to the end of your code:
+- You can complete your code by calling the function and giving it a user name from which to collect tweets. For example, add this line to the end of your code:
 
 ```python
 calculate_naughty(classifier, accuracy, 'coding2learn')
