@@ -33,7 +33,7 @@ def parse_tweets(words):
 	words = word_tokenize(words)
 ```
 
-- Then you can use a feature of `nltk` called `stopwords`. These are words like 'i', 'me', and 'my' that don't really carry any emotional meaning. You can see all the `stopwords` by typing the following into your shell:
+- Then you can use a feature of `nltk` called `stopwords`. These are words like 'i', 'me', and 'my' that don't carry any meaning for our sentiment analysis. You can see all the `stopwords` by typing the following into your shell:
 
 ```python
 >>> from nltk.corpus import stopwords
