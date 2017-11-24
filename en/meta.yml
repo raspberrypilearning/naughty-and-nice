@@ -1,6 +1,6 @@
-title: Naughty and Nice
+title: Naughty or nice
 hero_image: images/banner.png
-description: A sentiment analysis bot using Twitter
+description: Use Python to create sentiment analysis bot for Twitter
 theme: red
 duration: 3
 listed: false
@@ -15,11 +15,11 @@ steps:
   - title: What you will need
   - title: Setting up and testing your Twitter account
   - title: Reading the Twitter stream
-  - title: Storing Tweets
+  - title: Storing tweets
   - title: Cleaning up the tweets
   - title: Sorting tweets
   - title: Parsing tweets
   - title: Training a classifier
   - title: Calculating naughtiness
-  - title: "Challenge: Making it interactive"
+  - title: "Challenge: making it interactive"
   
