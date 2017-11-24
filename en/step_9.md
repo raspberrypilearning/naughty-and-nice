@@ -39,13 +39,13 @@ def train_classifier(positive_tweets, negative_tweets):
 	fraction_neg =  round(len(negative_tweets) * 0.8)
 ```
 
-- Next the training set and the testing set can be created by joining 80% of the positive tweets and 80% of the negative tweets into one giant list of categorised tweets. The remaining tweets are used in the testing set. Then the `classifier` can be created and the accuracy calculated.
+- Next, the training set can be created by joining 80% of the positive tweets and 80% of the negative tweets into one giant list of categorised tweets. The remaining tweets are used in the testing set. Then the `classifier` can be created and the accuracy calculated.
 
 ```python
 def train_classifier(positive_tweets, negative_tweets):
     positive_tweets = [(parse_tweets(tweet),'positive') for tweet in positive_tweets]
     negative_tweets = [(parse_tweets(tweet),'negative') for tweet in negative_tweets]
-	fraction_pos =  round(len(positive_tweets) * 0.8)
+	  fraction_pos =  round(len(positive_tweets) * 0.8)
     fraction_neg =  round(len(negative_tweets) * 0.8)
 	
     train_set = negative_tweets[:fraction_pos] + positive_tweets[:fraction_pos]
