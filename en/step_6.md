@@ -1,6 +1,6 @@
 ## Cleaning up the tweets
 
-At the moment the tweets you have collected contain information we don't want to include in the sentiment analysis, such as any @mentions, URLs, and punctuation. So the next step is to strip the tweets of that information, leaving only the words and the emojis.
+At the moment, the tweets you have collected contain information we don't want to include in the sentiment analysis: @mentions, URLs, and punctuation. So the next step is to strip the tweets of that information, leaving only words and emojis.
 
 - Start by creating a new function called `clean_tweets`. It can go just above your `##EXECUTE THE PROGRAM` section.
 
@@ -8,7 +8,7 @@ At the moment the tweets you have collected contain information we don't want to
 def clean_tweets(tweets):
 ```
 
-- The easiest way to remove these strings from the tweets is to use regular expressions (or regex). Go back up to the top of your program, and add the `re` module to your imports:
+- The easiest way to remove the unnecessary strings from the tweets is to use **regular expressions (or regex)**. Go to the top of your program, and add the `re` module to your imports:
 
 ```python
 import re
@@ -24,7 +24,7 @@ Here is a simple string:
 ```python
 my_string = "The price of milk is £0.45 a pint"
 ```
-Now imagine you wanted to remove the `£0.45` from the above string.
+Now imagine you wanted to remove the `£0.45` from this string.
 
 - Start by removing the `£` sign, using the `re.sub` method to replace it with an empty string.
 
@@ -32,9 +32,9 @@ Now imagine you wanted to remove the `£0.45` from the above string.
 re.sub(r'£', '', my_string)
 ```
 
-The `r` before the string is to ensure that the string is treated as a raw string. This is important, as otherwise the `\` character is treated as an escape.
+The `r` before the string ensures that the string is treated as a raw string. This is important, as otherwise the `\` character is treated as an escape.
 
-- Next you can remove any character straight after the `£` sign, as long as it's not a whitespace character, using the `\S` pattern.
+- Next, you can remove any character straight after the `£` sign, as long as it's not a whitespace character, using the `\S` pattern.
 
 ```python
 re.sub(r'£\S', '', my_string)
@@ -47,7 +47,7 @@ re.sub(r'£\S+', '', my_string)
 ```
 --- /collapse ---
 
-- Use regex to iterate over all the tweets in the list of tweets and remove all @mentions and URLs that start with 'http'.
+- Use regex to iterate over all the tweets in the list of tweets and remove all @mentions, as well as all URLs that start with 'http'.
 
 --- hints --- --- hint ---
 <video width="560" height="315" controls>
@@ -61,9 +61,9 @@ Now you need to remove the punctuation. You can use the `translate` method to do
 
 --- collapse ---
 ---
-title: Using translate
+title: Using `translate`
 ---
-The `translate` method can be used to translate one character into another. It needs to be provided with a dictionary of characters, where the key is the Unicode point of the character (`ord('d')` for example), and the value is the character to replace it.
+The `translate` method can be used to translate one character into another. It needs to be provided with a dictionary of characters, where the key is the **Unicode** point of the character (`ord('d')` for example), and the value is the character with which you want to replace it.
 
 ```python
 >>> 'gold'.translate({ord('d'):'f'})
@@ -90,7 +90,7 @@ string.punctuation     ##all the punctuation symbols.
 ```
 --- /collapse ---
 
-- Now use the `translate` method and the `string` module to turn all the punctuation symbols into empty strings.
+- Use the `translate` method and the `string` module to turn all the punctuation symbols into empty strings.
 
 --- hints --- --- hint ---
 <video width="560" height="315" controls>
