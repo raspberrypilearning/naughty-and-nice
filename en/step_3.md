@@ -1,14 +1,14 @@
 ## Setting up and testing your Twitter account
 
-This step involves using a lot of code to fetch a user's Twitter stream and to fetch random live tweets.
+This step involves using a lot of code to fetch a user's Twitter stream as well as random live tweets.
 
-- Once you have a Twitter account, you will need to create a new app associated with this account. An app is simply a program that you are linking to your Twitter account. You can see how to do this in the collapsible section below.
+- Once you have a Twitter account, you will need to create a new app associated with this account. An app is simply a program that you link to your Twitter account. You can see how to do this in the collapsible section below.
 
 [[[generic-api-registering-twitter]]]
 
-- Now create a new Python 3 file in your preferred editor (use IDLE if you have no preference) and call it `naughty_and_nice.py`.
+- Now create a new Python 3 file in your preferred editor (use IDLE if you have no preference), and call it `naughty_and_nice.py`.
 
-- In this file you can now set up your connection to Twitter, so that you can fetch a user's tweets and a live stream of current tweets. **Make sure to add in the path to your `twitter_auth.json` file correctly.**
+- In this file, set up your connection to Twitter, so that you can fetch a user's tweets and a live stream of current tweets. **Make sure to add in the path to your `twitter_auth.json` file correctly.**
 
 ```python
 ##IMPORTS
@@ -35,7 +35,7 @@ api = tweepy.API(auth)
 tweets = []
 ```
 
-- For the last part of this section, you will create a `class` to read the twitter stream, limiting it to 200 tweets that will be stored in the `tweets` list. Add this at the bottom of your file:
+- For the last part of this section, you will create a `class` to read the twitter stream, limiting it to 200 tweets that will be stored in the `tweets` list. Add this code at the bottom of your file:
 
 ```python
 ##TWITTER STREAM
@@ -50,10 +50,12 @@ myStreamListener = MyStreamListener()
 myStream = tweepy.Stream(auth = api.auth, listener=myStreamListener)
 ```
 
-- Having written this, you can now test whether your code works. Add this line of code at the end of your file to search Twitter for the word 'christmas', and save and run your program (it might take a long time to run):
+- Having written this, you can now test whether your code works. Add this line of code at the end of your file to search Twitter for the word 'christmas':
 
 ```python
 myStream.filter(track=["christmas"], languages=['en'])
 ```
 
-- Once the program has finished, you can view the first tweet by typing `tweets[0]` into the shell. Be warned though: if you are using IDLE as your programming environment, it will crash if the tweet contains an emoji.
+- Save and run your program — it might take a long time to run.
+
+- Once the program has finished, you can view the first tweet you've stored by typing `tweets[0]` into the shell. Be warned though: if you are using IDLE as your programming environment, it will crash if the tweet contains an emoji.
