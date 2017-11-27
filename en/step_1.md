@@ -1,6 +1,6 @@
 ## Introduction
 
-It's been a hard year for Santa, so he's not had much of an opportunity to make a list, and he certainly has had no time to check it twice! To help Santa out, you're going to make a sentiment analysis bot that can look over a Twitter user's last 200 tweets and make a decision about whether they are naughty or nice.
+It's been a hard year for Santa, so he's not had much of an opportunity to make a list, and he certainly has had no time to check it twice! To help Santa out, you're going to write a sentiment analysis program that can look over a Twitter user's last 200 tweets and make a decision about whether they are naughty or nice.
 
 This is a fairly advanced project and is best suited for learners with reasonable experience in a programming language,
 
