@@ -1,6 +1,8 @@
 ## Training a classifier
 
-We will now create a **`classifier`** that will be able to tell if a tweet has a positive or negative sentiment. First we need to train it though, to teach it what positive tweets and negative tweets look like. If you're not interested in how the `classifier` works, as it might be a bit tricky to understand, then the full code for the function is provided at the bottom of this step. 
+We will now create a **`classifier`** that will be able to tell if a tweet has a positive or negative sentiment. First we need to train it though, to teach it what positive tweets and negative tweets look like. To do the training, we will use the dataset of random tweets we have fetched.
+
+If you're not interested in how the `classifier` works, as it might be a bit tricky to understand, then the full code for the function is provided at the bottom of this step. 
 
 - Two new modules will need to be imported at the top of your program:
 
@@ -21,7 +23,7 @@ The first thing to do in the function is to create a new data structure that wil
 ({'why': True, 'want': True, 'talk': True, 'happy': True, 'today': True, 'hello': True}, 'positive')
 ```
 
-- Add these lines to your function to great the tuples:
+- Add these lines to your function to create the tuples:
 
 ```python
 def train_classifier(positive_tweets, negative_tweets):
@@ -29,7 +31,9 @@ def train_classifier(positive_tweets, negative_tweets):
     negative_tweets = [(parse_tweets(tweet),'negative') for tweet in negative_tweets]
 ```
 
-- You don't want to use all the tweets to train the `classifier` — some tweets should be kept back so that you can use them later to calculate how accurate the `classifier` is. Therefore, only 80% of the tweets will be used in training.
+You don't want to use all the tweets to train the `classifier` — some tweets should be kept back so that you can use them later to calculate how accurate the `classifier` is. Therefore, only 80% of the tweets will be used in training.
+
+- Add two lines of code to your function to determine which fractions of your tweets you will use for training:
 
 ```python
 def train_classifier(positive_tweets, negative_tweets):
@@ -54,13 +58,13 @@ def train_classifier(positive_tweets, negative_tweets):
     accuracy = nltk.classify.util.accuracy(classifier, test_set)
     return classifier, accuracy
 ```
-- Then call the function on the last line of your program:
+- Now call the function on the last line of your program:
 
 ```python
 classifier, accuracy = train_classifier(pos_tweets, neg_tweets)
 ```
 
-- Have a look at the video below if you want to learn a little more about the classifier and the accuracy.
+- Have a look at the video below if you want to learn a little more about the classifier and its accuracy.
 
 <video width="560" height="315" controls>
 <source src="images/vid_11.webm" type="video/webm">
