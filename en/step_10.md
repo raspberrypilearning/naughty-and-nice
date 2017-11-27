@@ -1,6 +1,6 @@
 ## Calculating naughtiness
 
-Now that you can tell if a tweet is positive or negative, you can fetch a user's last two hundred tweets and see if they mostly talk about negative or positive things. This will let you find out if they're naughty or nice.
+Now you can tell if a tweet is positive or negative, having used random tweets to train your classifier to do sentiment analysis. Next, fetch a user's last two hundred tweets and use the classifier to see if they mostly talk about negative or positive things. This will let you find out if they're naughty or nice.
 
 - Start by creating a new function called `calculate_naughty`. It should take the classifier, accuracy, and a Twitter user name as parameters.
 
@@ -42,7 +42,7 @@ Your browser does not support WebM video, so try FireFox or Chrome.
 </video>
 --- /hint --- --- /hints ---
 
-- You can complete your code by calling the function and giving it a user name from which to collect tweets. For example, add this line to the end of your code:
+- You can complete your code by calling the function and giving it the name of a Twitter account from which to collect tweets. For example, add this line to the end of your code:
 
 ```python
 calculate_naughty(classifier, accuracy, 'coding2learn')
