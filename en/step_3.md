@@ -1,6 +1,6 @@
 ## Setting up and testing your Twitter account
 
-This step involves using a lot of code to fetch a user's Twitter stream as well as random live tweets.
+This step involves using a lot of code to fetch random live tweets.
 
 - Once you have a Twitter account, you will need to create a new app associated with this account. An app is simply a program that you link to your Twitter account. You can see how to do this in the collapsible section below.
 
@@ -50,7 +50,7 @@ myStreamListener = MyStreamListener()
 myStream = tweepy.Stream(auth = api.auth, listener=myStreamListener)
 ```
 
-- Having written this, you can now test whether your code works. Add this line of code at the end of your file to search Twitter for the word 'christmas':
+- Having written this, you can now test whether your code works by fetching live tweets. Add this line of code at the end of your file to search Twitter for the word 'christmas':
 
 ```python
 myStream.filter(track=["christmas"], languages=['en'])
