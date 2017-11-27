@@ -30,15 +30,15 @@ title: Opening a file and reading it into a list
 with open('filename.txt', 'r') as f:
 ```
 
-**If you are using Windows**, you may have issues if you do not specify an encoding type. Use this code instead:
-```python
-with open('filename.txt', 'r', encoding='utf8') as f:
-```
-
 - To read each line of the file into a list, you can use `readlines`.
 ```python
 with open('filename.txt', 'r') as f:
 	my_list = f.readlines()
+```
+
+**If you are using Windows**, you may have issues if you do not specify an encoding type. Use this code instead:
+```python
+with open('filename.txt', 'r', encoding='utf8') as f:
 ```
 --- /collapse ---
 
@@ -52,7 +52,7 @@ Your browser does not support WebM video, so try FireFox or Chrome.
 
 --- /hint --- --- /hints ---
 
-- Now you need to merge the two sets of tweets into a single list, so the ones you have just collected from the stream and the ones stored in the file are combined. This is easy to do in Python, as you can simply add them together.
+- Now you need to merge the two sets of tweets into a single list, so the ones you have just collected from the stream and the ones stored in the file are combined. As you've seen earlier, this is easy in Python, as you can simply add them together.
 
 ```python
 all_tweets = old_tweets + tweets
@@ -121,17 +121,17 @@ title: Write a list to a file
 with open('tweets.txt', 'w') as f:
 ```
 
-**If you are using Windows***, you may have issues if you do not specify an encoding type. Use this code instead:
-
-```python
-with open('tweets.txt', 'w', encoding='utf8') as f:
-```
-
 - You can then use the `writelines` function to write the contents of the list into the file.
 
 ```python
 with open('tweets.txt', 'w') as f:
 	f.writelines(all_tweets)
+```
+
+**If you are using Windows***, you may have issues if you do not specify an encoding type. Use this code instead:
+
+```python
+with open('tweets.txt', 'w', encoding='utf8') as f:
 ```
 --- /collapse ---
 
