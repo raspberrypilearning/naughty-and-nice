@@ -1,6 +1,6 @@
 ## Storing tweets
 
-The more data you have, the more accurate your sentiment analysis will be. At the moment, you have 201 tweets, which is not really enough. However, collecting thousands of tweets in one go would take ages, and the list of tweets would be emptied each time you run the program. For this reason you're going to save the tweets into a file, so that with each run of your program, your data set will grow.
+The more data you have, the more accurate your sentiment analysis will be. At the moment, you have 201 tweets, which is not really enough. However, collecting thousands of tweets in one go would take ages, and the list of tweets would be emptied each time you run the program. For this reason you're going to save the tweets in a file, so that your data set will grow each run of your program.
 
 - In the directory in which you saved your Python file, create a new empty file called `tweets.txt`. This is where the fetched tweets will be stored.
 
