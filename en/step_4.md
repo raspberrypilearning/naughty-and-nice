@@ -20,14 +20,16 @@ neg_emojis = ['☹','😕','😩','😒','😠','😐','😦','😣','😫','�
 ---
 title: Instructions if your text editor does not allow emojis
 ---
-- Some text editors and IDEs don't allow emoji characters. IDLE, for instance, won't print emojis to the shell. If you are using IDLE, or another IDE that doesn't support emojis, then use these lines of code instead.
+Some text editors and IDEs don't allow emoji characters. IDLE, for instance, won't print emojis to the shell.
+
+- If you are using IDLE, or another IDE that doesn't support emojis, then use these lines of code instead.
 
 ```python
 pos_emojis = [chr(uni) for uni in [128537, 10084, 128525, 128147, 128535, 9786, 128522, 128539, 128149, 128512, 128515, 128538]]
 neg_emojis = [chr(uni) for uni in [9785, 128533, 128553, 128530, 128544, 128528, 128550, 128547, 128555, 128534, 128542, 128148, 128546, 128543]]
 ```
 
-- This is essentially the same as using the emojis, but instead you use their **code points**, which are then converted to the characters.
+This is essentially the same as using the emojis, but instead you use their **code points**, which are then converted to the characters.
 --- /collapse ---
 
 - You then need to create a list called `all_emojis` containing all the emojis to be used in your search through tweets.
