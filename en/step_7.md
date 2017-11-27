@@ -1,8 +1,8 @@
 ## Sorting tweets
 
-Now that you have a growing list of recent tweets, you need to categorise each tweet according to whether it has a positive sentiment (nice) or a negative sentiment (naughty). You will do this by seeing which tweets contain positive emojis and which contain negative ones.
+Now that you have a growing list of recent random tweets, you need to categorise each tweet according to whether it has a positive sentiment (nice) or a negative sentiment (naughty). You will do this by seeing which tweets contain positive emojis and which contain negative ones.
 
-Let's tackle the positive tweets first: you can use Python's `set` data structure again to see which tweets have positive emojis. If the `set` of a tweet contains the same characters as the `set` of positive emoji, then the tweet can be classified as positive. In set theory, this is called the **intersection**, and you can use the Python `&` operator to find this.
+Let's tackle the positive tweets first: you can use Python's `set` data structure again to see which tweets have positive emojis. If the `set` of a tweet contains the same characters as the `set` of positive emoji, then the tweet can be classified as positive. In set theory, this is called the **intersection**, and you can use the Python `&` operator to find it.
 
 - Create a function called `sort_tweets` that takes the list of tweets as an argument.
 - Inside the function, use `set` to build a list of all tweets that contain a positive emoji. You could do this using another list comprehension, or just a loop if you prefer. If you're completely stumped, then have a look at the section below.
