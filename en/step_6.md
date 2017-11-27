@@ -32,7 +32,7 @@ Now imagine you wanted to remove the `£0.45` from this string.
 re.sub(r'£', '', my_string)
 ```
 
-The `r` before the string ensures that the string is treated as a raw string. This is important, as otherwise the `\` character is treated as an escape.
+The `r` before the string ensures that the string is treated as a **raw string literal**. Don't worry too much about why it is needed, but if you want to learn more then have a look at [the documentation](https://docs.python.org/3.6/reference/lexical_analysis.html#string-and-bytes-literals)
 
 - Next, you can remove any character straight after the `£` sign, as long as it's not a whitespace character, using the `\S` pattern.
 
