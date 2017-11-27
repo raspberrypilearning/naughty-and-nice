@@ -1,6 +1,6 @@
 ## Setting up and testing your Twitter account
 
-This step involves using a lot of code to fetch random live tweets.
+This step involves using a lot of code to fetch random live tweets. You will need these as data for training your sentiment analysis program.
 
 - Once you have a Twitter account, you will need to create a new app associated with this account. An app is simply a program that you link to your Twitter account. You can see how to do this in the collapsible section below.
 
