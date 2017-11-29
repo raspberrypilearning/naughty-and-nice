@@ -1,6 +1,6 @@
 ## Cleaning up the tweets
 
-At the moment, the tweets you have collected contain information we don't want to include in the sentiment analysis: @mentions, URLs, and punctuation. So the next step is to strip the tweets of that information, leaving only words and emojis.
+At the moment, the tweets you have collected contain information we don't want to include in the sentiment analysis: @ mentions, URLs, and punctuation. So the next step is to strip the tweets of that information, leaving only words and emojis.
 
 - Start by creating a new function called `clean_tweets`. It can go just above your `##EXECUTE THE PROGRAM` section.
 
