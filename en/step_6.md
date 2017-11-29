@@ -1,6 +1,6 @@
 ## Cleaning up the tweets
 
-At the moment, the tweets you have collected contain information we don't want to include in the sentiment analysis: @mentions, URLs, and punctuation. So the next step is to strip the tweets of that information, leaving only words and emojis.
+At the moment, the tweets you have collected contain information we don't want to include in the sentiment analysis: @ mentions, URLs, and punctuation. So the next step is to strip the tweets of that information, leaving only words and emojis.
 
 - Start by creating a new function called `clean_tweets`. It can go just above your `##EXECUTE THE PROGRAM` section.
 
@@ -47,7 +47,7 @@ re.sub(r'£\S+', '', my_string)
 ```
 --- /collapse ---
 
-- Use regex to iterate over all the tweets in the list of tweets and remove all @mentions, as well as all URLs that start with 'http'.
+- Use regex to iterate over all the tweets in the list of tweets and remove all @ mentions, as well as all URLs that start with 'http'.
 
 --- hints --- --- hint ---
 <video width="560" height="315" controls>
