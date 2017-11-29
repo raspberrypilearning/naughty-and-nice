@@ -47,7 +47,7 @@ re.sub(r'£\S+', '', my_string)
 ```
 --- /collapse ---
 
-- Use regex to iterate over all the tweets in the list of tweets and remove all @mentions, as well as all URLs that start with 'http'.
+- Use regex to iterate over all the tweets in the list of tweets and remove all @ mentions, as well as all URLs that start with 'http'.
 
 --- hints --- --- hint ---
 <video width="560" height="315" controls>
