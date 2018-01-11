@@ -4,7 +4,7 @@ The more data you have, the more accurate your sentiment analysis will be. At th
 
 - In the directory in which you saved your Python file, create a new empty file called `tweets.txt`. This is where the fetched tweets will be stored.
 
-- Now define a new function called `store_tweets` at the bottom of your file. The function will have two parameters: the `file` to store the data in, and the `tweets` list you have created.
+- Now define a new function called `store_tweets` at the bottom of your `naughty_and_nice.py`. The function will have two parameters: the `file` to store the data in, and the `tweets` list you have created.
 
 ```python
 def store_tweets(file, tweets):
@@ -25,6 +25,8 @@ The first time you run the program, `tweets.txt` will be empty, but it will soon
 ---
 title: Opening a file and reading it into a list
 ---
+- In the directory in which you saved your Python file, create a new empty file called tweets.txt. This is where the fetched tweets will be stored.
+
 - To open a file, you first need to create a file object that contains all the file's data.
 ```python
 with open('filename.txt', 'r') as f:
