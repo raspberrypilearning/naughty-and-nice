@@ -18,6 +18,10 @@ import json
 ##SET UP TWITTER
 with open('/path/to/your/twitter_auth.json') as f:
     keys = json.load(f)
+	
+## Or On Windows ##
+#with open (r'C:\Users\username\path_to\twitter_auth.json')
+#	keys = json.load(f)
     
 consumer_key = keys['consumer_key']
 consumer_secret = keys['consumer_secret']
