@@ -6,7 +6,7 @@ This step involves using a lot of code to fetch random live tweets. You will nee
 
 [[[generic-api-registering-twitter]]]
 
-- Now create a new Python 3 file in your preferred editor (use IDLE if you have no preference), and call it `naughty_and_nice.py`.
+- Now create a new Python 3 file in your preferred editor (use Mu or Thonny if you have no preference), and call it `naughty_and_nice.py`.
 
 - In this file, set up your connection to Twitter, so that you can fetch a user's tweets and a live stream of current tweets. **Make sure to add in the path to your `twitter_auth.json` file correctly.**
 
@@ -62,4 +62,4 @@ myStream.filter(track=["christmas"], languages=['en'])
 
 - Save and run your program — it might take a long time to run.
 
-- Once the program has finished, you can view the first tweet you've stored by typing `tweets[0]` into the shell. Be warned though: if you are using IDLE as your programming environment, it will crash if the tweet contains an emoji.
+- Once the program has finished, you can view the first tweet you've stored by typing `tweets[0]` into the shell.
