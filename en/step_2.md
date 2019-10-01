@@ -8,6 +8,7 @@
 
 [[[rpi-install-software]]]
 
++ An editor or IDE that supports emojis. We recommend [Mu](https://codewith.mu/){:target="_blank"}
 + Python 3
 + Tweepy Python library: `pip3 install tweepy`
 + NLTK Python library: `pip3 install nltk`

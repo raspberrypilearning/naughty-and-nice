@@ -29,7 +29,9 @@ pos_emojis = [chr(uni) for uni in [128537, 10084, 128525, 128147, 128535, 9786, 
 neg_emojis = [chr(uni) for uni in [9785, 128533, 128553, 128530, 128544, 128528, 128550, 128547, 128555, 128534, 128542, 128148, 128546, 128543]]
 ```
 
-This is essentially the same as using the emojis, but instead you use their **code points**, which are then converted to the characters.
+This is essentially the same as using the emojis, but instead you use their **code points**, which are then converted to the characters. 
+
+You may find that your program still crashes (with Thonny for example), so it is easier to use a text editor with full support such as [Mu](https://codewith.mu/){:target="_blank"}.
 --- /collapse ---
 
 - You then need to create a list called `all_emojis` containing all the emojis to be used in your search through tweets.
