@@ -21,10 +21,12 @@ Now for the analysis.
 - Use a list comprehension to create a new list called `rating`. This should iterate over the `user_tweets` list, run the tweet through the `parse_tweet` function, and then classify it (using `classifier.classify()`). If you can't figure out how to do this, watch the video in the hint below.
 
 --- hints --- --- hint ---
+
 <video width="560" height="315" controls>
 <source src="images/vid_12.webm" type="video/webm">
 Your browser does not support WebM video, so try FireFox or Chrome.
 </video>
+
 --- /hint --- --- /hints ---
 
 - Your new `rating` list should now contain a large list with a mixture of `'negative'` and `'positive'` items. Write a few lines of code that will:
@@ -36,10 +38,12 @@ Your browser does not support WebM video, so try FireFox or Chrome.
 If you're stuck, then look at the video in the hint below.
 
 --- hints --- --- hint ---
+
 <video width="560" height="315" controls>
 <source src="images/vid_13.webm" type="video/webm">
 Your browser does not support WebM video, so try FireFox or Chrome.
 </video>
+
 --- /hint --- --- /hints ---
 
 - You can complete your code by calling the function and giving it the name of a Twitter account from which to collect tweets. For example, add this line to the end of your code:
