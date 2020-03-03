@@ -58,6 +58,7 @@ def train_classifier(positive_tweets, negative_tweets):
     accuracy = nltk.classify.util.accuracy(classifier, test_set)
     return classifier, accuracy
 ```
+
 - Now call the function on the last line of your program:
 
 ```python
