@@ -20,10 +20,13 @@ The collapsible section below provides details on how to use regex to remove wor
 ---
 title: Removing strings based on their beginning
 ---
+
 Here is a simple string:
+
 ```python
 my_string = "The price of milk is £0.45 a pint"
 ```
+
 Now imagine you wanted to remove the `£0.45` from this string.
 
 - Start by removing the `£` sign, using the `re.sub` method to replace it with an empty string.
@@ -45,11 +48,13 @@ re.sub(r'£\S', '', my_string)
 ```python
 re.sub(r'£\S+', '', my_string)
 ```
+
 --- /collapse ---
 
 - Use regex to iterate over all the tweets in the list of tweets and remove all @ mentions, as well as all URLs that start with 'http'.
 
 --- hints --- --- hint ---
+
 <video width="560" height="315" controls>
 <source src="images/vid_5.webm" type="video/webm">
 Your browser does not support WebM video, so try FireFox or Chrome.
@@ -63,6 +68,7 @@ Now you need to remove the punctuation. You can use the `translate` method to do
 ---
 title: Using `translate`
 ---
+
 The `translate` method can be used to translate one character into another. It needs to be provided with a dictionary of characters, where the key is the **Unicode** point of the character (`ord('d')` for example), and the value is the character with which you want to replace it.
 
 ```python
@@ -88,11 +94,13 @@ string.ascii_uppercase ##all the upper case characters
 string.digits          ##all the digits
 string.punctuation     ##all the punctuation symbols.
 ```
+
 --- /collapse ---
 
 - Use the `translate` method and the `string` module to turn all the punctuation symbols into empty strings.
 
 --- hints --- --- hint ---
+
 <video width="560" height="315" controls>
 <source src="images/vid_6.webm" type="video/webm">
 Your browser does not support WebM video, so try FireFox or Chrome.
@@ -109,8 +117,10 @@ tweets = [tweet.rstrip() for tweet in tweets]
 - You can now test your code out by calling the function. Check the video below if you're not sure how to do that.
 
 --- hints --- --- hint ---
+
 <video width="560" height="315" controls>
 <source src="images/vid_7.webm" type="video/webm">
 Your browser does not support WebM video, so try FireFox or Chrome.
 </video>
+
 --- /hint --- --- /hints ---
