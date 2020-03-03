@@ -20,6 +20,7 @@ neg_emojis = ['☹','😕','😩','😒','😠','😐','😦','😣','😫','�
 ---
 title: Instructions if your text editor does not allow emojis
 ---
+
 Some text editors and IDEs don't allow emoji characters. IDLE, for instance, won't print emojis to the shell.
 
 - If you are using IDLE, or another IDE that doesn't support emojis, then use these lines of code instead.
@@ -31,18 +32,32 @@ neg_emojis = [chr(uni) for uni in [9785, 128533, 128553, 128530, 128544, 128528,
 
 This is essentially the same as using the emojis, but instead you use their **code points**, which are then converted to the characters.
 
-You may find that your program still crashes (with Thonny for example), so it is easier to use a text editor with full support such as [Mu](https://codewith.mu/){:target="_blank"}. --- /collapse ---
+You may find that your program still crashes (with Thonny for example), so it is easier to use a text editor with full support such as [Mu](https://codewith.mu/){:target="_blank"}.
+
+--- /collapse ---
 
 - You then need to create a list called `all_emojis` containing all the emojis to be used in your search through tweets.
 
---- hints --- --- hint --- You can combine lists together by concatenating them. --- /hint --- --- hint --- To join two lists together, just use a `+` sign.
+--- hints --- --- hint ---
+
+You can combine lists together by concatenating them.
+
+--- /hint --- --- hint ---
+
+To join two lists together, just use a `+` sign.
+
 ```python
 new_list = old_list_1 + old_list_2
 ```
---- /hint --- --- hint --- Here's the line you need:
+
+--- /hint --- --- hint ---
+
+Here's the line you need:
+
 ```python
 all_emojis = pos_emojis + neg_emojis
 ```
+
 --- /hint --- --- /hints ---
 
 - Now you can start to fetch 200 tweets, but only if they are in English and contain one or more of the listed emojis.
