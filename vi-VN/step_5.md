@@ -25,28 +25,34 @@ The first time you run the program, `tweets.txt` will be empty, but it will soon
 ---
 title: Opening a file and reading it into a list
 ---
+
 - In the directory in which you saved your Python file, create a new empty file called tweets.txt. This is where the fetched tweets will be stored.
 
 - To open a file, you first need to create a file object that contains all the file's data.
+
 ```python
 with open('filename.txt', 'r') as f:
 ```
 
 - To read each line of the file into a list, you can use `readlines`.
+
 ```python
 with open('filename.txt', 'r') as f:
     my_list = f.readlines()
 ```
 
 **If you are using Windows**, you may have issues if you do not specify an encoding type. Use this code instead:
+
 ```python
 with open('filename.txt', 'r', encoding='utf8') as f:
 ```
+
 --- /collapse ---
 
 - In your function, open up the `file` file and load all the data into a list called `old_tweets`.
 
 --- hints --- --- hint ---
+
 <video width="560" height="315" controls>
 <source src="images/vid_2.webm" type="video/webm">
 Your browser does not support WebM video, so try FireFox or Chrome.
@@ -66,6 +72,7 @@ If you run the program fairly often, there will probably be duplicate tweets. Th
 ---
 title: Removing duplicates items from a list
 ---
+
 In Python, a set is an unordered collection of unique items. By its very definition it can't have duplicates within it. Here is an example of a Python set:
 
 ```python
@@ -90,11 +97,13 @@ So to remove duplicates from a list, you just need to turn the list into a set, 
 [1,2,3,4]
 >>>
 ```
+
 --- /collapse ---
 
 - Remove the duplicates from the `all_tweets` list.
 
 --- hints --- --- hint ---
+
 <video width="560" height="315" controls>
 <source src="images/vid_3.webm" type="video/webm">
 Your browser does not support WebM video, so try FireFox or Chrome.
@@ -118,7 +127,9 @@ Have a look at the collapsible section below if you need help with doing this.
 ---
 title: Write a list to a file
 ---
+
 - First you need to open a file in a writable mode:
+
 ```python
 with open('tweets.txt', 'w') as f:
 ```
@@ -135,6 +146,7 @@ with open('tweets.txt', 'w') as f:
 ```python
 with open('tweets.txt', 'w', encoding='utf8') as f:
 ```
+
 --- /collapse ---
 
 - Finish off the function by returning the `all_tweets` list.
@@ -142,6 +154,7 @@ with open('tweets.txt', 'w', encoding='utf8') as f:
 - Call the function at the end of your program, and save its output as `tweets`.
 
 --- hints --- --- hint ---
+
 <video width="560" height="315" controls>
 <source src="images/vid_4.webm" type="video/webm">
 Your browser does not support WebM video, so try FireFox or Chrome
