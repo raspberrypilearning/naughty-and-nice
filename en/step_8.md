@@ -27,6 +27,7 @@ def parse_tweets(words):
 ```
 
 - Next you are going to `tokenize` the words. This will split them up into a list.
+
 ```python
 def parse_tweets(words):
 	words = words.lower()
@@ -64,4 +65,5 @@ def parse_tweets(words):
     word_dictionary = dict([(word, True) for word in words])
     return word_dictionary
 ```
+
 --- /collapse ---

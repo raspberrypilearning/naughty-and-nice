@@ -11,22 +11,30 @@ Let's tackle the positive tweets first: you can use Python's `set` data structur
 ---
 title: Set intersections on strings
 ---
+
 You can easily find out whether a string contains any characters found in another string by using sets. For instance, here are two strings:
+
 ```python
 text = "I hope it's not ☔"
 weather = "☔☀⚡☁"
 ```
+
 Now, let's see if the `text` string contains any emoji that indicates weather. First, both strings need to become sets.
+
 ```python
 text_set = set(text)
 weather_set = set(weather)
 ```
+
 The two sets look like this:
+
 ```python
 {'☔', 'e', 'I', 'i', 't', "'", 'p', 'n', 's', ' ', 'o', 'h'}
 {'☔', '☁', '☀', '⚡'}
 ```
+
 You can see the intersection of the two sets easily:
+
 ```python
 >>> set(text) & set(weather)
 {'☔'}
@@ -39,11 +47,13 @@ So to see if two strings contain any of the same characters, you just need to se
 if set(text) & set(weather):
 	print("Text is about the weather")
 ```
+
 --- /collapse ---
 
 - You can do the same with the negative tweets now, and make sure to wrap it all in the `sort_tweets` function. Have a look at the hint below if you need help with this.
 
 --- hints --- --- hint ---
+
 <video width="560" height="315" controls>
 <source src="images/vid_8.webm" type="video/webm">
 Your browser does not support WebM video, so try FireFox or Chrome.
@@ -65,6 +75,7 @@ negative_tweets = [re.sub(r'[^\x00-\x7F]+','', tweet) for tweet in negative_twee
 - At the bottom of the file, add a line to call this function, saving its output as `pos_tweets` and `neg_tweets`.
 
 --- hints --- --- hint ---
+
 <video width="560" height="315" controls>
 <source src="images/vid_9.webm" type="video/webm">
 Your browser does not support WebM video, so try FireFox or Chrome.
