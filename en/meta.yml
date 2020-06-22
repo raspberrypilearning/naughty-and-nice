@@ -3,7 +3,7 @@ hero_image: images/banner.png
 description: Use Python to create a sentiment analysis program for Twitter
 theme: red
 duration: 3
-listed: true
+listed: false
 ingredient: false
 copyedit: true
 curriculum: 4, design-0, programming-4, phys-comp-0, manufacture-0, community-0
