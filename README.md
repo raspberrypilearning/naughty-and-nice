@@ -1,3 +1,5 @@
+**This project has been archived and is no longer being maintained**
+
 # Naughty and nice
 
 ![naughty-and-nice](/en/images/banner.png)
